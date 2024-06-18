@@ -1,14 +1,15 @@
 package com.example.manage;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.os.Handler;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class  SpashdarkActivity extends AppCompatActivity {
+public class SpashdarkActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +21,12 @@ public class  SpashdarkActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Delayed navigation to NextActivity
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(SpashdarkActivity.this, SplashlightActivity.class);
+            startActivity(intent);
+            finish();
+        }, 2000); // 3000 milliseconds or 3 seconds delay
     }
 }

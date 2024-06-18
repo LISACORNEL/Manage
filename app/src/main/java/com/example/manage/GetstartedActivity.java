@@ -1,7 +1,8 @@
 package com.example.manage;
 
+import android.content.Intent;
 import android.os.Bundle;
-
+import android.view.View;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -20,5 +21,16 @@ public class GetstartedActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Set the OnClickListener for your button
+        findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(GetstartedActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

@@ -1,6 +1,8 @@
 package com.example.manage;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,5 +22,12 @@ public class SplashlightActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        // Delayed navigation to NextActivity
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(SplashlightActivity.this, GetstartedActivity.class);
+            startActivity(intent);
+            finish();
+        }, 2000); // 3000 milliseconds or 3 seconds delay
     }
 }

@@ -31,7 +31,8 @@
             android:text="Your team at your fingertips"/>
 
         <Button
-            android:layout_width="370dp"
+            android:id="@+id/btn1"
+            android:layout_width="320dp"
             android:layout_height="60dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
